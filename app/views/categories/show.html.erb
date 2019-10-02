@@ -1,0 +1,20 @@
+<h1><%= @articles[0].category%>
+<% @articles.each do |a|%>
+  <div class="ui segment">
+    <div style="display: flex; justify-content: space-between; flex-direction: row; align-items: center">
+      <%= a.title %>
+      <% if a.user_id == current_user.id %>
+        <h5 style="color: orangered">Your Article</h5>
+      <% end%>
+    </div>
+    <hr />
+    <div>
+      <p style="font-weight: 200"><%= truncate(a.content, length: 300) %></p>
+      <% if logged_in?(:user, :editor, :admin)%>
+        <%= link_to 'Read More...', article_path(a.id) %>
+        <% else %>
+        <%= link_to 'Read More...', new_user_session_path %>
+      <% end%>
+    </div>
+  </div>
+<% end%>

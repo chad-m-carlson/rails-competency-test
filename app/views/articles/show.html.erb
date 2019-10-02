@@ -1,0 +1,23 @@
+<div class="ui relaxed grid">
+  <div class="ten wide column" style="border: 1px solid red">
+    <div class="ui card" style="width: 50rem">
+      <div class="content">
+        <div class="header">
+          <%= @article.title %>
+        </div>
+        <div class="description">
+          <p><%= @article.content %></p>
+        </div>
+      </div>
+    </div>
+  <% if logged_in?(:editor) && @article.user_id == current_user.id%>
+    </div>
+      <div class="four wide column" style="border: 1px solid blue">
+      <h3>Editor Tools</h3>
+        <%= link_to 'Delete this article', @article, method: :delete, class: "ui button red" %>
+        <br>
+        <br>
+        <%= link_to 'Edit this article', edit_article_path(@article), class: 'ui green button' %>
+    <div>
+  <% end%>
+</div>

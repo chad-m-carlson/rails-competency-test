@@ -1,0 +1,14 @@
+<h1><%= @article.id ? "Edit #{@article.title}" : "Create New Article" %></h1>
+<hr />
+<%= form_with(model: @article, local: true, class: "ui form") do |f| %>
+    <div class="field">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :content, "Content" %>
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit nil, class: "ui button" %>
+
+<% end %>

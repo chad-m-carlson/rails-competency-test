@@ -12,9 +12,10 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
-gem "materialize-sass"
+gem 'semantic-ui-sass'
 gem 'petergate'
 gem "minitest-rails", github: "blowmage/minitest-rails"
+gem 'slim'
 
 group :development, :test do
  gem 'pry-rails'

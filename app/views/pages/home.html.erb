@@ -1,0 +1,11 @@
+<h1>Home page</h1>
+<% @categories.each do |c|%>
+  <div class="ui segment">
+    <div class="ui small feed">
+      <h3><%= c %></h3>
+      <div class="content">
+      <%= render partial: "./layouts/categories", locals: {c: c}%>
+      </div>
+    </div>
+  </div>
+<% end%>

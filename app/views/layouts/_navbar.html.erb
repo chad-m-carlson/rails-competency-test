@@ -1,0 +1,17 @@
+
+<nav class="ui menu">
+  <%= link_to "Home", root_path, class: "item" %>
+  <%= link_to "Article List", articles_path, class: "item" %>
+  <% if logged_in?(:editor)%>
+    <%= link_to 'Editor Control Panel', editors_control_panel_path, class: "item"%>
+  <% end%>
+  <p><%= current_user ? current_user.role : nil %></p>
+  <div class="right menu">
+    <% if current_user%>
+      <%= link_to  "Logout", destroy_user_session_path, method: :delete, class: "item" %>
+      <% else%>
+        <%= link_to "Register", new_user_registration_path, class: "item" %>
+        <%= link_to "Login", new_user_session_path, class: "item" %>
+    <% end%>
+  </div>
+  </nav>
