@@ -3,7 +3,7 @@
   <div class="ui segment">
     <div style="display: flex; justify-content: space-between; flex-direction: row; align-items: center">
       <%= a.title %>
-      <% if a.user_id == current_user.id %>
+      <% if current_user && a.user_id == current_user.id %>
         <h5 style="color: orangered">Your Article</h5>
       <% end%>
     </div>

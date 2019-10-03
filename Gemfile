@@ -14,8 +14,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'semantic-ui-sass'
 gem 'petergate'
-gem "minitest-rails", github: "blowmage/minitest-rails"
 gem 'slim'
+gem 'will_paginate', '~> 3.1'
 
 group :development, :test do
  gem 'pry-rails'
@@ -33,6 +33,9 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem "minitest-rails", github: "blowmage/minitest-rails"
+  gem "minitest-colorize"
+  gem "minitest-focus"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

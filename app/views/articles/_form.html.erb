@@ -1,14 +1,20 @@
-<h1><%= @article.id ? "Edit #{@article.title}" : "Create New Article" %></h1>
+<h1><%= @article.id ? "Edit '#{@article.title}'" : "Create New Article" %></h1>
 <hr />
-<%= form_with(model: @article, local: true, class: "ui form") do |f| %>
-    <div class="field">
-      <%= f.label :title, "Title" %>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :content, "Content" %>
-      <%= f.text_area :content %>
-    </div>
-    <%= f.submit nil, class: "ui button" %>
-
-<% end %>
+<%= form_with(model: [@article], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "Content" %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="">
+    <%= f.label :content, "Category" %>
+    <%= f.select :category, options_for_select( Article.category_options, @article.category) %>
+  </div>
+  <div style="display: flex; justify-content: space-between;">
+    <%= link_to 'Cancel', @article.id ? article_path(@article) : editors_control_panel_path, class: "ui button" %>
+    <%= f.submit nil, class: "ui blue button" %>
+  </div>
+  <% end %>
