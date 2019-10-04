@@ -9,7 +9,7 @@
     <%= link_to 'Admin Control Panel', admin_control_panel_path, class: "item" %>
   <% end%>
   <div class="right menu">
-    <p style="margin: auto 0; padding-right: 3rem">Logged in as: <%= current_user ? current_user.role : nil %></p>
+    <p style="margin: auto 0; padding-right: 3rem"> <%= current_user ? "Logged in as: #{current_user.role}" : "Guest" %></p>
     <% if current_user%>
       <%= link_to  "Logout", destroy_user_session_path, method: :delete, class: "item" %>
       <% else%>
