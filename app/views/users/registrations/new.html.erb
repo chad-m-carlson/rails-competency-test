@@ -24,16 +24,16 @@
   <% if logged_in?(:admin) %>
     <div class="field" style="display: flex; justify-content: space-between; width: 50%">
       <div>
-        <%= radio_button_tag(:role, "editor") %>
-        <%= label_tag(:role, "Editor") %>
+        <%= radio_button_tag(:roles, "editor") %>
+        <%= label_tag(:roles, "Editor") %>
       </div>
       <div>
-        <%= radio_button_tag(:role, "admin") %>
-        <%= label_tag(:role, "Administrator") %>
+        <%= radio_button_tag(:roles, "admin") %>
+        <%= label_tag(:roles, "Administrator") %>
       </div>
       <div>
-        <%= radio_button_tag(:role, "user") %>
-        <%= label_tag(:role, "Normal User") %>
+        <%= radio_button_tag(:roles, "user") %>
+        <%= label_tag(:roles, "Normal User") %>
       </div>
     </div>
   <% end%>

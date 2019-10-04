@@ -21,6 +21,10 @@ group :development, :test do
  gem 'pry-rails'
  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
  gem 'rspec-rails'
+ gem 'rails-controller-testing'
+ gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git'
+ gem 'simplecov'
+ gem 'factory_bot_rails'
 end
 
 group :development do

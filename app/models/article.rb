@@ -5,6 +5,6 @@ class Article < ApplicationRecord
   validates :content, presence: true
 
   def self.category_options
-    Article.distinct.pluck(:category)
+    Article.distinct.order(:category).pluck(:category)
   end
 end
