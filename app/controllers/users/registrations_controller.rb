@@ -12,7 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user.set_role(params[:roles])
+    if logged_in?(:admin)
+      @user.set_role(params[:roles])
+    end
   end
 
   # GET /resource/edit
